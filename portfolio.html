@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shubham | Web Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #07070a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ==============================
+           BACKGROUND
+        ============================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            left: -200px;
+            top: 100px;
+
+            border-radius: 50%;
+
+            background: #6c3cff;
+
+            filter: blur(150px);
+
+            opacity: .25;
+
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            right: -200px;
+            top: 500px;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            filter: blur(150px);
+
+            opacity: .15;
+
+            z-index: -1;
+        }
+
+
+        /* ==============================
+           CONTAINER
+        ============================== */
+
+        .container {
+            width: min(1150px, 90%);
+
+            margin: auto;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        header {
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 100;
+
+            backdrop-filter: blur(15px);
+
+            background:
+                rgba(7, 7, 10, .65);
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+        }
+
+        nav {
+            height: 75px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #8c6cff;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 30px;
+
+            font-size: 14px;
+
+            color: #aaa;
+        }
+
+        .nav-links a {
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-btn {
+            border: 1px solid #444;
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+        .nav-btn:hover {
+            background: white;
+
+            color: black;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .available {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 8px 14px;
+
+            border: 1px solid
+                rgba(255,255,255,.12);
+
+            background:
+                rgba(255,255,255,.04);
+
+            border-radius: 50px;
+
+            font-size: 12px;
+
+            color: #aaa;
+
+            margin-bottom: 30px;
+        }
+
+        .available span {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #55e878;
+
+            box-shadow:
+                0 0 12px #55e878;
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(55px, 9vw, 110px);
+
+            line-height: .95;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #8b6cff,
+                    #00d9ff
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #999;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7655ff,
+                    #4e9fff
+                );
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(100,80,255,.3);
+        }
+
+        .secondary-btn {
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            border: 1px solid #333;
+
+            font-size: 14px;
+
+            transition: .3s;
+        }
+
+        .secondary-btn:hover {
+            background: #fff;
+
+            color: #000;
+        }
+
+
+        /* ==============================
+           STATS
+        ============================== */
+
+        .stats {
+            margin-top: 70px;
+
+            display: flex;
+
+            gap: 60px;
+
+            flex-wrap: wrap;
+        }
+
+        .stat h3 {
+            font-size: 32px;
+        }
+
+        .stat p {
+            color: #777;
+
+            font-size: 12px;
+
+            margin-top: 4px;
+        }
+
+
+        /* ==============================
+           SECTIONS
+        ============================== */
+
+        section:not(.hero) {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #8065ff;
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size:
+                clamp(35px, 5vw, 60px);
+
+            letter-spacing: -3px;
+
+            margin-top: 12px;
+        }
+
+        .section-title p {
+            color: #777;
+
+            max-width: 600px;
+
+            margin-top: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           ABOUT
+        ============================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about-text {
+            color: #999;
+
+            line-height: 1.9;
+
+            font-size: 16px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-card {
+            padding: 40px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.08),
+                    rgba(255,255,255,.02)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            backdrop-filter: blur(20px);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: #735cff;
+
+            filter: blur(90px);
+
+            opacity: .35;
+
+            right: -50px;
+            top: -50px;
+        }
+
+        .about-card h3 {
+            font-size: 50px;
+
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #999;
+
+            line-height: 1.7;
+        }
+
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            position: relative;
+
+            min-height: 400px;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            background: #0d0d12;
+
+            transition: .4s;
+        }
+
+        .project:hover {
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(140,108,255,.5);
+        }
+
+        .project-visual {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            left: 0;
+            top: 0;
+
+            opacity: .5;
+
+            transition: .5s;
+        }
+
+        .project:hover
+        .project-visual {
+            transform: scale(1.08);
+
+            opacity: .7;
+        }
+
+        .project-one {
+            background:
+                radial-gradient(
+                    circle at 70% 30%,
+                    #5e40c9,
+                    transparent 45%
+                ),
+                #11101b;
+        }
+
+        .project-two {
+            background:
+                radial-gradient(
+                    circle at 30% 50%,
+                    #008da8,
+                    transparent 45%
+                ),
+                #081217;
+        }
+
+        .project-three {
+            background:
+                radial-gradient(
+                    circle at 70% 60%,
+                    #b93c67,
+                    transparent 45%
+                ),
+                #180c13;
+        }
+
+        .project-four {
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #a07826,
+                    transparent 45%
+                ),
+                #171308;
+        }
+
+        .project-content {
+            position: relative;
+
+            z-index: 2;
+
+            height: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+        }
+
+        .project-tag {
+            display: inline-block;
+
+            width: fit-content;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0,0,0,.35);
+
+            font-size: 10px;
+
+            color: #bbb;
+
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #bbb;
+
+            font-size: 13px;
+
+            max-width: 450px;
+
+            line-height: 1.6;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 18px;
+
+            color: #fff;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 14px 20px;
+
+            border-radius: 8px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            color: #bbb;
+
+            transition: .3s;
+        }
+
+        .skill:hover {
+            background: #fff;
+
+            color: #000;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           EXPERIENCE
+        ============================== */
+
+        .timeline {
+            border-left:
+                1px solid #333;
+
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 35px;
+
+            margin-bottom: 50px;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: #8065ff;
+
+            left: -5px;
+
+            top: 7px;
+
+            box-shadow:
+                0 0 15px #8065ff;
+        }
+
+        .timeline-date {
+            color: #8065ff;
+
+            font-size: 12px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-item h3 {
+            font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #777;
+
+            font-size: 14px;
+
+            max-width: 600px;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-box {
+            text-align: center;
+
+            padding: 90px 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #171329,
+                    #0c141a
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .contact-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: #735cff;
+
+            filter: blur(120px);
+
+            opacity: .2;
+
+            left: 50%;
+
+            top: -150px;
+
+            transform:
+                translateX(-50%);
+        }
+
+        .contact-box h2 {
+            position: relative;
+
+            font-size:
+                clamp(40px, 7vw, 75px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            position: relative;
+
+            color: #888;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            border-top:
+                1px solid #1c1c20;
+
+            padding: 30px 0;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        .footer-inner {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* ==============================
+           SCROLL ANIMATION
+        ============================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media(max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 35px;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .nav-btn {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            section:not(.hero) {
+                padding: 80px 0;
+            }
+
+            .project {
+                min-height: 350px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     NAVBAR
+============================== -->
+
+<header>
+
+    <nav class="container">
+
+        <a href="#home" class="logo">
+            SHUB<span>.</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+        <a href="#contact" class="nav-btn">
+            Let's Talk
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content reveal">
+
+            <div class="available">
+
+                <span></span>
+
+                Available for opportunities
+
+            </div>
+
+
+            <h1>
+
+                Hi, I'm
+                <span>Shubham.</span>
+
+                <br>
+
+                I build digital
+                experiences.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Frontend developer focused on creating
+                modern, responsive and interactive
+                websites using HTML, CSS, JavaScript
+                and creative animations.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="primary-btn"
+                >
+                    Explore My Work
+                </a>
+
+                <a
+                    href="#contact"
+                    class="secondary-btn"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <h3>
+                        20+
+                    </h3>
+
+                    <p>
+                        Projects
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>
+                        10+
+                    </h3>
+
+                    <p>
+                        Technologies
+                    </p>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <h3>
+                        100%
+                    </h3>
+
+                    <p>
+                        Passion
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     ABOUT
+============================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>
+                01 — About Me
+            </small>
+
+            <h2>
+                Turning ideas into
+                interfaces.
+            </h2>
+
+            <p>
+                I enjoy combining technology and design
+                to create websites that feel modern,
+                intuitive and memorable.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+
+                    I'm a frontend developer who enjoys
+                    building websites from scratch.
+
+                </p>
+
+                <p>
+
+                    My focus is on clean code, responsive
+                    layouts, smooth animations and
+                    user-friendly experiences.
+
+                </p>
+
+                <p>
+
+                    I'm constantly learning new technologies
+                    and experimenting with new ways to make
+                    the web more interactive.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-card reveal">
+
+                <h3>
+                    01
+                </h3>
+
+                <p>
+
+                    Design is not just about how something
+                    looks. It's about how it works, how it
+                    feels and how easily people understand it.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     PROJECTS
+============================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>
+                02 — Selected Work
+            </small>
+
+            <h2>
+                Projects.
+            </h2>
+
+            <p>
+                A collection of projects I've created
+                while learning and experimenting.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project reveal">
+
+                <div
+                    class="project-visual project-one">
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        HTML / CSS / JS
+                    </span>
+
+                    <h3>
+                        Personal Portfolio
+                    </h3>
+
+                    <p>
+
+                        A responsive portfolio website
+                        featuring modern animations,
+                        interactive sections and
+                        a clean visual identity.
+
+                    </p>
+
+                    <a
+                        href="#"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project reveal">
+
+                <div
+                    class="project-visual project-two">
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        JavaScript
+                    </span>
+
+                    <h3>
+                        Dashboard UI
+                    </h3>
+
+                    <p>
+
+                        A responsive dashboard interface
+                        designed to display information
+                        in a clean and understandable way.
+
+                    </p>
+
+                    <a
+                        href="#"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project reveal">
+
+                <div
+                    class="project-visual project-three">
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        UI / UX
+                    </span>
+
+                    <h3>
+                        Landing Page
+                    </h3>
+
+                    <p>
+
+                        A modern landing page focused
+                        on visual hierarchy, typography
+                        and conversion-friendly design.
+
+                    </p>
+
+                    <a
+                        href="#"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project reveal">
+
+                <div
+                    class="project-visual project-four">
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-tag">
+                        Web Design
+                    </span>
+
+                    <h3>
+                        Creative Website
+                    </h3>
+
+                    <p>
+
+                        An experimental website combining
+                        typography, gradients and interactive
+                        visual effects.
+
+                    </p>
+
+                    <a
+                        href="#"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     SKILLS
+============================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>
+                03 — Skills
+            </small>
+
+            <h2>
+                My toolkit.
+            </h2>
+
+            <p>
+                Technologies and tools I use to
+                create digital experiences.
+            </p>
+
+        </div>
+
+
+        <div class="skills reveal">
+
+            <div class="skill">
+                HTML5
+            </div>
+
+            <div class="skill">
+                CSS3
+            </div>
+
+            <div class="skill">
+                JavaScript
+            </div>
+
+            <div class="skill">
+                Responsive Design
+            </div>
+
+            <div class="skill">
+                Git & GitHub
+            </div>
+
+            <div class="skill">
+                GSAP
+            </div>
+
+            <div class="skill">
+                UI / UX
+            </div>
+
+            <div class="skill">
+                Figma
+            </div>
+
+            <div class="skill">
+                React
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     EXPERIENCE
+============================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>
+                04 — Journey
+            </small>
+
+            <h2>
+                My journey.
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2026
+                </div>
+
+                <h3>
+                    Frontend Development
+                </h3>
+
+                <p>
+
+                    Building modern websites,
+                    improving JavaScript skills
+                    and experimenting with
+                    animation libraries.
+
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2025
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+
+                    Started creating responsive
+                    websites using HTML, CSS
+                    and JavaScript.
+
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2024
+                </div>
+
+                <h3>
+                    Started Coding
+                </h3>
+
+                <p>
+
+                    Began learning programming,
+                    web development and
+                    problem solving.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     CONTACT
+============================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <h2>
+                Let's create
+                something great.
+            </h2>
+
+            <p>
+
+                Have an idea, project or opportunity?
+                Let's talk about it.
+
+            </p>
+
+            <a
+                href="mailto:shubham@example.com"
+                class="primary-btn"
+            >
+                Get In Touch →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <span>
+            © 2026 Shubham
+        </span>
+
+        <span>
+            Designed & Built with HTML, CSS & JavaScript
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const elements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(
+                    entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                                .classList
+                                .add("active");
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    elements.forEach(
+        element => {
+
+            observer.observe(element);
+
+        }
+    );
+
+
+
+    /* =========================
+       MOUSE PARALLAX
+    ========================= */
+
+    const cards =
+        document.querySelectorAll(".project");
+
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateX =
+                    (y - centerY) / 25;
+
+
+                const rotateY =
+                    (centerX - x) / 25;
+
+
+                card.style.transform =
+                    `
+                    perspective(800px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    translateY(-8px)
+                    `;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
